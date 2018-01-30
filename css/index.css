@@ -480,7 +480,7 @@ input{
 	position: absolute;
 	top: 0;
 	left: 190px;
-	z-index: 10;
+	z-index: 200;
 }
 .banner_center li{
 	display: none;
@@ -499,6 +499,7 @@ input{
 	position: absolute;
 	left: 297px;
 	bottom: 20px;
+	z-index: 960;
 }
 .banner_dian .button{
 	display: block;
@@ -573,6 +574,7 @@ input{
 	top: 180px;
 	left: 0;
 	display: block;
+	z-index: 970;
 }
 .zuojian .iconfont{
 	font-size: 24px;
@@ -593,6 +595,7 @@ input{
 	top: 180px;
 	right: 0;
 	display: block;
+	z-index: 970;
 }
 .youjian:hover{
 	background: rgba(0, 0, 0, .5);
@@ -617,14 +620,16 @@ input{
 	text-align: center;
 	line-height: 440px;
 	color:#000;
-	z-index: 11;
+	z-index: 1;
 }
 .xxk1 li{
 	display: none;
 	background: #fff;
+	z-index: 1;
 }
 .xxk1 .active{
 	display: block;
+	z-index: 999;
 }
 .banner_right{
 	width: 170px;
@@ -938,7 +943,7 @@ input{
 	top: 60px;	
 	left: 0;
 	background: rgba(255, 255, 255, .5);
-	z-index: 10;
+	z-index: 200;
 	display: none;
 }
 .juhui_youjian{
@@ -949,7 +954,7 @@ input{
 	top: 60px;	
 	right: 11px;
 	background: rgba(255, 255, 255, .5);
-	z-index: 10;
+	z-index: 200;
 	display: none;
 }
 .juhui_i{
