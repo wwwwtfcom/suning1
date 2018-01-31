@@ -480,7 +480,6 @@ input{
 	position: absolute;
 	top: 0;
 	left: 190px;
-	z-index: 200;
 }
 .banner_center li{
 	display: none;
@@ -499,7 +498,6 @@ input{
 	position: absolute;
 	left: 297px;
 	bottom: 20px;
-	z-index: 960;
 }
 .banner_dian .button{
 	display: block;
@@ -620,12 +618,12 @@ input{
 	text-align: center;
 	line-height: 440px;
 	color:#000;
-	z-index: 1;
+	z-index: 999;
 }
 .xxk1 li{
 	display: none;
 	background: #fff;
-	z-index: 1;
+	z-index: 999;
 }
 .xxk1 .active{
 	display: block;
@@ -2818,6 +2816,61 @@ input{
 	color: #333;
 	font-size: 11px;
 }
-.listest li:hover{
+.listest li.active{
 	background: orange;
+}
+.topbar{
+	width: 100%;
+	height: 50px;
+	background: #fff;
+	position: fixed;
+	top:-50px;
+	left:0;
+	transition: all .5s;
+	z-index: 99;
+}
+.top-main{
+	width: 1190px;
+	height: 50px;
+	margin:auto;
+}
+
+.fenleis{
+	width: 163px;
+	height: 38px;
+	background: #f90;
+	float: left;
+	padding-left:27px;
+	line-height: 38px;
+	color:#fff;
+	font-size: 14px;
+	position: relative;
+}
+.sss{
+	display: block;
+	width: 540px;
+	height: 40px;
+	margin:5px auto;
+}
+.tbssz{
+	width: 418px;
+	height: 36px;
+	border: 2px solid #ffaa00;
+	background: #fff;
+	float: left;
+}
+.tbssy{
+	display: block;
+	width: 118px;
+	height: 100%;
+	background: #ffaa00;
+	float: left;
+	font-size: 18px;
+	font-weight: bold;
+	color: #fff;
+	line-height: 40px;
+	text-align: center;
+}
+.tbssy:hover{
+	background: #ff8800;
 }

@@ -8,6 +8,10 @@ window.onload=function(){
     let yeju=document.querySelectorAll('.xxk .bottom_five');
     let x=document.querySelectorAll('.br_word');
     let xx=document.querySelectorAll('.xxk1 li');
+    let fls=document.querySelectorAll('.tl');
+    for(let i=0;i<fls.length;i++){
+        console.log(i)
+    }
     function move(){
         num++;
         if(num>ban.length-1){

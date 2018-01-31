@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="css/base.css">
 	<link rel="shortcut icon" href="img/touxiang.jpg">
 	<script src="js/index.js"></script>
+	<script src="js/animate.js"></script>
 </head>
 <body>
 	<div class="fixed">
@@ -1167,7 +1168,7 @@
 		<a href="" class="tupian_box" title="海尔 冰洗"><img src="img/dianshi3.jpg" alt=""></a>
 	</div>
 <!-- 手机电脑-->
-	<div class="shuma">
+	<div class="shuma tl">
 		<div class="shuma_box">
 			<div class="shouji_top">
 				<div class="t_left">
@@ -1382,7 +1383,7 @@
 	</div>
 
 <!-- 家用电器-->
-	<div class="jiadian">
+	<div class="jiadian tl">
 		<div class="jiadain_top">
 			<div class="t_lt">
 				<div class="t_word">家用电器</div>
@@ -1509,7 +1510,7 @@
 		<a href="" class="tupian_box" title="空调 以旧换新"><img src="img/tupian3.jpg" alt=""></a>
 	</div>
 <!-- 智能数码-->
-	<div class="shuma">
+	<div class="shuma tl">
 		<div class="shuma_box">
 			<div class="shouji_top zhineng_top">
 				<div class="t_left zhineng_left">
@@ -1726,7 +1727,7 @@
 
 
 <!-- 家庭用品-->
-	<div class="shuma">
+	<div class="shuma tl">
 		<div class="shuma_box">
 			<div class="shouji_top shenghuo_top">
 				<div class="t_left shenghuo_left">
@@ -1940,7 +1941,7 @@
 	</div>
 
 <!-- 美味生活-->
-	<div class="jiadian">
+	<div class="jiadian tl">
 		<div class="jiadain_top meiwei_top">
 			<div class="m_left">
 				<div class="t_word">美味生活</div>
@@ -2062,7 +2063,7 @@
 
 
 <!-- 母婴-->
-	<div class="shuma">
+	<div class="shuma tl">
 		<div class="shuma_box">
 			<div class="shouji_top muying_top">
 				<div class="t_left muying_left">
@@ -2279,7 +2280,7 @@
 
 
 <!-- 服装-->
-	<div class="shuma">
+	<div class="shuma tl">
 		<div class="shuma_box">
 			<div class="shouji_top fuzhuang_top">
 				<div class="t_left fuzhuang_left">
@@ -2495,7 +2496,7 @@
 
 
 <!-- 金融-->
-	<div class="shuma">
+	<div class="shuma tl">
 		<div class="shuma_box">
 			<div class="shouji_top jinrong_top">
 				<div class="t_left jinrong_left">
@@ -2711,7 +2712,7 @@
 	</div>
 
 <!-- 猜你喜欢-->
-	<div class="me">
+	<div class="me tl">
 		<div class="me_top">
 			<div class="me_title">猜你喜欢</div>
 		</div>
@@ -3578,23 +3579,91 @@
 		<div class="floatbar">
 			<div class="float-bg"></div>
 			<ul class="listest">
-				<li><a href="">手机电脑</a></li>
-				<li><a href="">家用电脑</a></li>
-				<li><a href="">数码汽车</a></li>
-				<li><a href="">生活家装</a></li>
-				<li><a href="">美味生活</a></li>
-				<li><a href="">母婴美妆</a></li>
-				<li><a href="">服饰运动</a></li>
-				<li><a href="">金融阅读</a></li>
-				<li><a href="">清单拼购</a></li>
-				<li><a href="">猜你喜欢</a></li>
+				<li class="active"><a>手机电脑</a></li>
+				<li><a>家用电脑</a></li>
+				<li><a>数码汽车</a></li>
+				<li><a>生活家装</a></li>
+				<li><a>美味生活</a></li>
+				<li><a>母婴美妆</a></li>
+				<li><a>服饰运动</a></li>
+				<li><a>金融阅读</a></li>
+				<li><a>猜你喜欢</a></li>
 			</ul>
 		</div>
 	</div>
 
-
+    <!--顶部导航开始-->
+    <div class="topbar">
+        <div class="top-main">
+            <div class="fenleis">
+                <div class="ibox"></div>
+                全部商品分类
+            </div>
+            <div class="sss toubu-shousuo-top">
+                <div class="tbssz"></div>
+                <a href="" class="tbssy">搜索</a>
+            </div>
+            <div class="gouwuches"></div>
+            <div class="denglus"></div>
+        </div>
+    </div>
+    <!--顶部导航结束-->
 </body>
 </html>
+<script>
+    //楼层跳转
+    {
+        let lis=document.querySelectorAll(".tl");
+        let xds=document.querySelectorAll(".listest li");
+        let yc=document.querySelector(".topbar");
+        let flag=true;
+        let cl=true;
+        let hq=true;
+        let he=document.documentElement.clientHeight;
+        window.onscroll=function () {
+            if(!flag){
+                return;
+            }
+            let pos=document.body.scrollTop?document.body.scrollTop:document.documentElement.scrollTop;  //滚动条的高度
+            if(pos>he){
+                if(cl){
+                    cl=false
+                    animate(yc,{top:0},500,function () {
+                        hq=true;
+                    })
+                }
+            }else {
+                if(hq){
+                    hq=false;
+                    animate(yc,{top:-80},500,function () {
+                        cl=true;
+                    })
+                }
+            }
+
+            lis.forEach(function (val,index) {
+                if(pos>=val.offsetTop-he+600){
+                    xds.forEach(function (a,b) {
+                        a.classList.remove("active")
+                    })
+                    xds[index].classList.add("active")
+                }
+            })
+        }
+
+        xds.forEach(function (a,b) {
+            let pos=document.body.scrollTop?document.body.scrollTop:document.documentElement.scrollTop;
+            a.onclick=function () {
+                flag=false
+                let x=(lis[b].offsetTop)-100;
+                animate(document.body,{scrollTop:x},200)
+                animate(document.documentElement,{scrollTop:x},200,function () {
+                    flag=true;
+                })
+            }
+        })
+    }
+</script>
 
 
 
